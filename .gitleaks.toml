@@ -1,0 +1,8 @@
+title = "DevSecOps Mini Pipeline Gitleaks Config"
+
+[allowlist]
+description = "Allow example placeholders only"
+regexes = [
+  '''example''',
+  '''changeme'''
+]

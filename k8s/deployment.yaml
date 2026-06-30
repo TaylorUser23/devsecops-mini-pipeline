@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devsecops-mini-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devsecops-mini-app
+  template:
+    metadata:
+      labels:
+        app: devsecops-mini-app
+    spec:
+      containers:
+        - name: devsecops-mini-app
+          image: devsecops-mini-app:latest
+          ports:
+            - containerPort: 3000
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devsecops-mini-app
+spec:
+  selector:
+    app: devsecops-mini-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
