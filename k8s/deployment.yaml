@@ -12,6 +12,13 @@ spec:
       labels:
         app: devsecops-mini-app
     spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
+
       containers:
         - name: devsecops-mini-app
           image: devsecops-mini-app:latest
@@ -21,6 +28,11 @@ spec:
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: true
             runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            capabilities:
+              drop:
+                - ALL
           resources:
             requests:
               cpu: "100m"
