@@ -6,3 +6,4 @@
 | R-002 | Hardcoded secret in source control | High | Gitleaks | Prevented | Gitleaks runs on every pull request |
 | R-003 | Vulnerable container package | Critical | Trivy | Prevented | Pipeline fails on high/critical image findings |
 | R-004 | Kubernetes container allows privilege escalation | High | Trivy config | Prevented | Added restrictive securityContext |
+| R-005 | S3 bucket missing customer-managed KMS encryption | High | Trivy config | Fixed | Added customer-managed KMS key and configured SSE-KMS encryption |
