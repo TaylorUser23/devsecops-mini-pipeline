@@ -4,7 +4,9 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
 COPY app/package*.json ./
-RUN npm install --omit=dev
+RUN apk update && apk upgrade --no-cache && \
+    npm ci --omit=dev && \
+    npm cache clean --force
 
 COPY app/src ./src
 
