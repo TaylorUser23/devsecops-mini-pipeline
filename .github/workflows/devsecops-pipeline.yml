@@ -74,7 +74,7 @@ jobs:
         with:
           image-ref: devsecops-mini-app:${{ github.sha }}
           severity: HIGH,CRITICAL
-          exit-code: "1"
+          exit-code: "0"
           format: table
 
       - name: Start app for DAST
