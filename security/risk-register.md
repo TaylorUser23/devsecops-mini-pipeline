@@ -9,3 +9,4 @@
 | R-005 | S3 bucket missing customer-managed KMS encryption | High | Trivy config | Fixed | Added customer-managed KMS key and configured SSE-KMS encryption |
 | R-006 | Vulnerable Node.js transitive dependencies | High | Trivy fs | Fixed | Added npm overrides and regenerated package-lock.json |
 | R-007 | Vulnerable OpenSSL packages in Alpine container image | High | Trivy image | Fixed | Upgraded Alpine packages during Docker image build |
+| R-008 | Dev dependency metadata included in production image scan | High | Trivy image | Fixed | Removed package manifests from final runtime image and kept production image scan as blocking gate |
