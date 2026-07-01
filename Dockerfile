@@ -5,6 +5,7 @@ ENV NODE_ENV=production
 
 COPY app/package*.json ./
 RUN apk update && apk upgrade --no-cache && \
+    apk add --no-cache tar && \
     npm ci --omit=dev && \
     npm cache clean --force && \
     rm -f package.json package-lock.json
