@@ -123,15 +123,6 @@ docker build -t devsecops-mini-app .
 docker run -p 3000:3000 devsecops-mini-app
 ```
 
-## Suggested Screenshots for LinkedIn
-
-- GitHub Actions pipeline passing
-- Failed scan from an intentional vulnerability or misconfiguration
-- Fixed code commit
-- Trivy scan output
-- OWASP ZAP report artifact
-- Architecture diagram
-
 ## Lessons Learned
 
 This project shows how DevSecOps connects secure development, automated scanning, vulnerability management, CI/CD security gates, container hardening, and documentation into one repeatable workflow.
